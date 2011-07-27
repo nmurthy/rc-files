@@ -4,12 +4,15 @@ if [ "$(uname)" = "Darwin" ]; then
     alias find='gfind'
     alias pi='sudo port -v install'
     alias pq='port search'
+    alias gvim='mvim'
+    alias vlc='open -a VLC'
 elif [ "$(uname)" = "Linux" ]; then
     # Linux-Specific Aliases
     if [ -x $(which dircolors) ]; then
         eval $( dircolors -b )
         alias ls='ls --color=auto'
     fi
+    alias mvim='gvim'
 fi
 
 # General Aliases
