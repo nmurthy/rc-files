@@ -1,0 +1,7 @@
+
+[Desktop Entry]
+Type=Application
+Name=GTK Window Decorator
+Exec=gtk-window-decorator
+Icon=system-run
+Comment=

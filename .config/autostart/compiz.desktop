@@ -1,0 +1,7 @@
+
+[Desktop Entry]
+Type=Application
+Name=Compiz
+Exec=compiz --replace --indirect-rendering --loose-binding ccp
+Icon=system-run
+Comment=

@@ -1,0 +1,24 @@
+if [ "$(uname)" = "Darwin" ]; then
+    # Mac-Specific Aliases
+    alias ls='gls --color=auto -h'
+    alias find='gfind'
+    alias pi='sudo port -v install'
+    alias pq='port search'
+elif [ "$(uname)" = "Linux" ]; then
+    # Linux-Specific Aliases
+    if [ -x $(which dircolors) ]; then
+        eval $( dircolors -b )
+        alias ls='ls --color=auto'
+    fi
+fi
+
+# General Aliases
+alias ll='ls -l'
+alias la='ll -a'
+alias dh='dirs -v'
+alias man='LC_ALL=C LANG=C man'
+
+# Emory Aliases
+alias lab='ssh lab6c.mathcs.emory.edu'
+
+# vim: set ft=zsh
