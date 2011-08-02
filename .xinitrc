@@ -4,10 +4,10 @@
 
 VBoxClient-all &
 eval $(gnome-keyring-daemon --start)
-export GNOME-KEYRING-SOCKET
-export GNOME-KEYRING-PID
-export SSH_AUTH_SOCK="$GNOME_KEYRING_CONTROL/ssh"
-exec xmonad
+export GNOME_KEYRING_PID
+export GNOME_KEYRING_SOCKET
+export SSH_AUTH_SOCK
+dbus-launch xmonad
 
 # DEFAULT_SESSION=ck-launch-session gnome-session
 # ck-launch-session gnome-session
