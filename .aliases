@@ -6,6 +6,7 @@ if [ "$(uname)" = "Darwin" ]; then
     alias pq='port search'
     alias gvim='mvim'
     alias vlc='open -a VLC'
+    alias quicktime='open -a QuickTime\ Player'
 elif [ "$(uname)" = "Linux" ]; then
     # Linux-Specific Aliases
     if [ -x $(which dircolors) ]; then

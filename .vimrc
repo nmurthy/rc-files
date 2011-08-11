@@ -3,6 +3,7 @@ set guioptions-=T
 filetype on
 filetype plugin on
 filetype indent on
+filetype plugin indent on
 set nocompatible
 set bg=dark
 
