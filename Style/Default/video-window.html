@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/Lunettes.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/Utilities.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/CocoaObject.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/ListItemView.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/ListView.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/MediaView.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/MediaListView.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/NavigationController.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/WindowController.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="PlaylistController.js"></script>
+	<link id="style" rel="stylesheet" type="text/css" href="default.css" />
+
+	<title>Video Window</title>
+</head>
+<body onload="window.windowController.init(); window.playlistController.init();" id="content" class="key-window wants-cocoatitlebar">
+
+<div id="window-content" class="drag-platform-window">
+
+
+    <div id="video-view" class="view" ondblclick="windowController.enterFullscreen()"></div>
+    <div class="controls">
+        <button class="enter-fullscreen"></button>
+        <button class="toggle-playing"></button>
+        <div class="volume">
+            <img src="volume_low.png">
+            <input class="volume-slider" type="range" max="200" value="50">
+            <img src="volume_high.png">
+        </div>
+        <div class="timeinfo">
+            <input class="timeline" type="range"  max="1000" value="0">
+            <div class="ellapsed-time">--:--</div>
+        </div>
+        <div class="status">Playing</div>
+        <div class="spacer"></div>
+        <input type="search" id="search-playlist" class="search" placeholder="Search" value="" incremental="true">
+    </div>
+
+    <div class="playlist">
+        <div id="mediaList">
+    </div>
+
+    <div class="preloader"></div>
+</div>
+
+
+</body>
+</html>

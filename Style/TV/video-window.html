@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/Lunettes.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/Utilities.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/CocoaObject.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/ListViewItem.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/ListView.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/MediaView.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/MediaListView.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/NavigationController.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/dom-drag.js"></script>
+    <script type="text/ecmascript" encoding="utf-8" src="%lunettes_style_root%/WindowController.js"></script>
+	<link id="style" rel="stylesheet" type="text/css" href="default.css" />
+
+	<title>Video Window</title>
+    <script>
+    function placeWindow() {
+        var newSize = { width: 870, height: 640 };
+        // Because we are not able to fit any rect in this style, place ourselves at the right place.
+        var originalFrame = windowController.windowFrame();
+        var x = originalFrame.origin.x;
+        var y = originalFrame.origin.y - newSize.height + originalFrame.size.height;
+        window.PlatformWindow.setFrame(x, y, newSize.width, newSize.height);
+        window.PlatformView.videoDidResize();
+    }
+    function init()
+    {
+        window.windowController.init();
+        setTimeout(placeWindow, 0);
+    }
+    </script>
+</head>
+<body onload="init();" id="content" class="transparent">
+<div id="main-window" class="drag-platform-window key-window">
+    <div id="video">
+        <div id="video-view" class="view below-content dont-drag-platform-window">
+        </div>
+            <div id="draggable-controls" class=" draggable"> <!-- Be hidden by default -->
+                <div class="controls">
+                    <div id="title" class="title">Movie title</div>
+                    <div class="timeinfo">
+                        <div class="ellapsed-time">--:--</div>
+                        <input id="timeline" type="range" class="timeline" max="1000">
+                        <div class="remaining-time">--:--</div>
+                    </div>
+                    <button class="enter-fullscreen"></button>
+                    <button class="toggle-playing"></button>
+                </div>
+                <div class="preloader"></div>
+            </div>
+
+            <div id="more" class="hidden">
+                <div class="textcontent">
+                    <div id="mediaList">
+                    </div>
+                    <div class="overlay-top"></div>
+                    <div class="overlay-bottom"></div>
+                </div>
+            </div>
+    </div>
+
+    <div class="resize resize-platform-window"></div>
+    <div class="preloader"></div>
+</div>
+</body>
+</html>

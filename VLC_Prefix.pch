@@ -1,0 +1,30 @@
+//
+// Prefix header for all source files of the 'Lunettes' target in the 'Lunettes' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "VLCFeatures.h"
+    #import "VLCPreferencesKeys.h"
+
+static inline void VLCAssert_(bool condition, NSString *fmt, ...)
+{
+    if (condition)
+        return;
+
+    va_list va;
+    va_start(va, fmt);
+    NSString *string = [[NSString alloc] initWithFormat:fmt arguments:va];
+    va_end(va);
+    (*NSGetUncaughtExceptionHandler())([NSException exceptionWithName:@"VLCAssert" reason:string userInfo:nil]);
+    [string release];
+}
+
+
+#endif
+
+#define VLCLogDebug NSLog
+
+#define VLCAssert(a, ...) VLCAssert_((a), __VA_ARGS__)
+#define VLCAssertNotReached(a) VLCAssert(0, a)
+#define VLCAssertMainThread() VLCAssert([NSThread isMainThread], @"Should be on main thread")

@@ -1,0 +1,6 @@
+release_script
+.DS_Store
+*.mode*v*
+*.perspective*
+*.pbxuser
+build
