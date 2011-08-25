@@ -25,4 +25,10 @@ alias man='LC_ALL=C LANG=C man'
 # Emory Aliases
 alias lab='ssh lab6c.mathcs.emory.edu'
 
-# vim: set ft=zsh
+# Twitter Aliases
+n () {
+    ssh nest$1.smf1.twitter.com
+}
+
+
+# vim: set ft=zsh:
