@@ -1,9 +1,11 @@
 [alias]
-   co = checkout
-   st = status
-   ci = commit
+    co = checkout
+    st = status
+    ci = commit
 [color]
-   ui = auto
+    ui = auto
 [user]
-   name = Nikhil Murthy
-   email = nikhil@twitter.com
+    name = Nikhil Murthy
+    email = nikhil@twitter.com
+[merge]
+    stat = true

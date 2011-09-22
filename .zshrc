@@ -98,6 +98,43 @@ preexec_functions+='preexec_update_git_vars'
 precmd_functions+='precmd_update_git_vars'
 chpwd_functions+='chpwd_update_git_vars'
 
+# Prompt
+# autoload colors zsh/terminfo
+# if [[ "$terminfo[colors]" -ge 8 ]]; then
+# colors
+# fi
+# for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
+#     eval PR_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
+#     eval PR_LIGHT_$color='%{$fg[${(L)color}]%}'
+#     (( count = $count + 1 ))
+# done
+# PR_NO_COLOR="%{$terminfo[sgr0]%}"
+# prompt_setup () {
+#     prompt_base=${1:-'blue'}
+#     prompt_user=${2:-'green'}
+#     prompt_root=${3:-'red'}
+# 
+#     if [ "`whoami`" = "root" ]; then
+#         base_prompt="%B%F{$prompt_root}%m%k$PR_NO_COLOR"
+#     else
+#         base_prompt="%B%F{$prompt_user}$PR_BLUE%U%n%u$PR_NO_COLOR@$PR_GREEN%m%k$PR_NO_COLOR"
+#     fi
+#     post_prompt="%b%f%k"
+#     path_prompt="%B%F{$prompt_base}:$PR_RED%3~$PR_NO_COLOR"
+#     PROMPT="$base_prompt$path_prompt (prompt_git_info) %# $post_prompt"
+# }
+# 
+# if [ -n "SSH_CLIENT" ]; then
+#     prompt_setup gray
+# else
+#     prompt_setup blue
+# fi # taken from srobertson's zshrc
+# 
+# if [ $TERM = "xterm" -o $TERM = "xterm-color" ]; then
+#     precmd() { print -Pn "\e]0;%m:%~\a" }
+#     preexec () { print -Pn "\e]0;$1\a" }
+# fi # taken from srobertson's zshrc
+
 # Set the prompt.
 PROMPT=$'%{${fg[cyan]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
 

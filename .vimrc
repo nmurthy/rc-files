@@ -1,11 +1,21 @@
-syntax on
+" pathogen
+call pathogen#infect()
+
+syntax enable
 set guioptions-=T
 filetype on
 filetype plugin on
 filetype indent on
 filetype plugin indent on
 set nocompatible
-set bg=dark
+" Color Scheme
+set background=dark
+colorscheme solarized
+
+" Highlight Trailing Whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Line Numbering
 set number
@@ -54,4 +64,4 @@ set backupdir=$HOME/.vimbackup/
 set directory=$HOME/.vimswap/
 set viewdir=$HOME/.vimviews/
 
-colo ir_black
+let g:sessions_project_path = "$HOME/workspace"

@@ -26,9 +26,18 @@ alias man='LC_ALL=C LANG=C man'
 alias lab='ssh lab6c.mathcs.emory.edu'
 
 # Twitter Aliases
-n () {
-    ssh nest$1.smf1.twitter.com
+
+print_run_cmd () {
+    echo "** running '$@'"
+    "$@"
 }
 
+n () {
+    if [[ -z $1 ]]; then
+        print_run_cmd ssh nest2.smf1.twitter.com
+    else
+        print_run_cmd ssh nest$1.smf1.twitter.com
+    fi
+}
 
 # vim: set ft=zsh:
