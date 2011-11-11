@@ -10,7 +10,7 @@ filetype plugin indent on
 set nocompatible
 " Color Scheme
 set background=dark
-colorscheme solarized
+colorscheme molokai
 
 " Highlight Trailing Whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -20,8 +20,8 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 " Line Numbering
 set number
 
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set nocp incsearch
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
@@ -63,5 +63,8 @@ set backup
 set backupdir=$HOME/.vimbackup/
 set directory=$HOME/.vimswap/
 set viewdir=$HOME/.vimviews/
+
+" autocompile coffee files on write
+au BufWritePost *.coffee silent CoffeeMake!
 
 let g:sessions_project_path = "$HOME/workspace"

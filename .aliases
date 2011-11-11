@@ -21,9 +21,7 @@ alias ll='ls -l'
 alias la='ll -a'
 alias dh='dirs -v'
 alias man='LC_ALL=C LANG=C man'
-
-# Emory Aliases
-alias lab='ssh lab6c.mathcs.emory.edu'
+alias gi='print_run_cmd gem install --no-ri --no-rdoc'
 
 # Twitter Aliases
 
@@ -34,9 +32,20 @@ print_run_cmd () {
 
 n () {
     if [[ -z $1 ]]; then
-        print_run_cmd ssh nest2.smf1.twitter.com
+        print_run_cmd ssh nest2.corp.twitter.com
     else
-        print_run_cmd ssh nest$1.smf1.twitter.com
+        print_run_cmd ssh nest$1.corp.twitter.com
+    fi
+}
+
+alias rn1='print_run_cmd ssh releasenest1.corp.twitter.com'
+alias rn2='print_run_cmd ssh releasenest2.corp.twitter.com'
+
+rn () {
+    if [[ -z $1 ]]; then
+        print_run_cmd ssh releasenest1.corp.twitter.com
+    else
+        print_run_cmd ssh releasenest$1.corp.twitter.com
     fi
 }
 

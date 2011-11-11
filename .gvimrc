@@ -6,7 +6,7 @@ if platform =~ "Linux"
     set gfn=DejaVu\ Sans\ Mono\ 9
 elseif platform =~ "Darwin"
     " Mac specific options
-    set gfn=Droid\ Sans\ Mono:h10
+    set gfn=Menlo:h10
 endif
 
 au VimLeave * mksession! ~/.vim/session/%:t.session

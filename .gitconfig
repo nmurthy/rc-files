@@ -4,8 +4,18 @@
     ci = commit
 [color]
     ui = auto
+	grep = true
+	interactive = true
 [user]
     name = Nikhil Murthy
     email = nikhil@twitter.com
 [merge]
     stat = true
+[core]
+	editor = mvim -f
+[branch]
+	autosetupmerge = always
+[web]
+    browser = chrome
+[status]
+    showuntrackedfiles = no
